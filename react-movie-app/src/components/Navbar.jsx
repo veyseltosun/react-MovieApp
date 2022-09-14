@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { signOut } from "../auth/firebase";
 
 const Navbar = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
 
   return (
@@ -21,7 +21,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="ms-2 btn btn-outline-light"
-                onClick={() => history.push("/login")}
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>
@@ -39,7 +39,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="ms-2 btn btn-outline-light"
-                onClick={() => history.push("/register")}
+                onClick={() =>navigate("/register")}
               >
                 Register
               </button>
