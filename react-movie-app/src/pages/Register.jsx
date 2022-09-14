@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {createUser, signUpProvider} from '../auth/firebase';
-import { useHistory } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 const Register = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,12 +13,12 @@ const Register = () => {
     const user = {firstName, lastName, email, password};
     const displayName = `${firstName} ${lastName}`;
     createUser(user.email, user.password, displayName);
-    history.push('/');
+    navigate('/');
   }
 
   const handleProviderRegister = () => {
     signUpProvider();
-    history.push('/');
+    navigate('/');
   }
 
 

@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signIn, signUpProvider, forgotPassword } from "../auth/firebase";
 
 const Login = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
     const user = { email, password };
     signIn(user.email, user.password);
-    history.push("/");
+    navigate("/");
   };
 
   const handleProviderLogin = () => {
     signUpProvider();
-    history.push("/");
+    navigate("/");
   };
 
   return (
