@@ -1,15 +1,20 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import { initializeApp } from "firebase/app";
 
-const firebaseApp = firebase.initializeApp({
+import { getAuth } from "firebase/auth";
+
+
+const firebaseConfig = {
     apiKey: "AIzaSyAC4UEg0Smg6eUphSKLU7a5-vpmUWDfjX4",
     authDomain: "movie-app-53bf6.firebaseapp.com",
     projectId: "movie-app-53bf6",
     storageBucket: "movie-app-53bf6.appspot.com",
     messagingSenderId: "215843265951",
     appId: "1:215843265951:web:7eceba8b55ec68a96771aa"
-});
+  };
+
+  const firebase = initializeApp(firebaseConfig);
+  
+  const auth = getAuth(firebase);
 
 export const createUser = async (email, password, displayName) => {
   try {
@@ -79,4 +84,4 @@ export const forgotPassword = (email) => {
   alert("Please check your mail box!");
 };
 
-export default firebaseApp;
+export default firebase;
