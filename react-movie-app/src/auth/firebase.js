@@ -3,12 +3,12 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+    apiKey: "AIzaSyAC4UEg0Smg6eUphSKLU7a5-vpmUWDfjX4",
+    authDomain: "movie-app-53bf6.firebaseapp.com",
+    projectId: "movie-app-53bf6",
+    storageBucket: "movie-app-53bf6.appspot.com",
+    messagingSenderId: "215843265951",
+    appId: "1:215843265951:web:7eceba8b55ec68a96771aa"
 });
 
 export const createUser = async (email, password, displayName) => {
